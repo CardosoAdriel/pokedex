@@ -61,11 +61,9 @@ const closeModal = () => {
 }
 
 const insertDataPokemonIntoModal = pokemon => {
-  console.log(pokemon)
   const type = pokemon.types.map(typeInfo => typeInfo.type.name)
   const pokemonName = pokemon.forms[0].name.toUpperCase()
   const statsPokemon = pokemon.stats.map(stat => ({value: stat.base_stat, name: stat.stat.name}))
-  console.log(statsPokemon)
   
 
   const contentDataPokemonModal = `
