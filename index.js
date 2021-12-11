@@ -53,11 +53,17 @@ inputPokemonSearch.addEventListener('input', (event) => {
   })
 })
 
-/** INÍCIO LÓGICA PARA APRESENTAR MODAL COM POKEMON SELECIONADO **/
 
+/** INÍCIO LÓGICA PARA APRESENTAR MODAL COM POKEMON SELECIONADO **/
 const closeModal = () => {
   containerCardPokedex.style.display = "flex"
   modalPokemonDetail.style.display = "none"
+}
+
+const openCardModal = contentModal => {
+  modalPokemonDetail.innerHTML = contentModal
+  modalPokemonDetail.style.display = "flex"
+  containerCardPokedex.style.display = "none"
 }
 
 const insertDataPokemonIntoModal = pokemon => {
@@ -96,12 +102,7 @@ const insertDataPokemonIntoModal = pokemon => {
     <img src="assets/poke-ball.png" class="btn-escolher"></img>
   </div>
   `
-  modalPokemonDetail.innerHTML = contentDataPokemonModal;
-
-  setTimeout(() => {
-    modalPokemonDetail.style.display = "flex"
-    containerCardPokedex.style.display = "none"
-  }, 300)
+  openCardModal(contentDataPokemonModal)
 
 }
 
